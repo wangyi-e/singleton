@@ -45,7 +45,7 @@ jobs:
         - cd $TRAVIS_BUILD_DIR/g11n-ws && ./gradlew build
         - cp $TRAVIS_BUILD_DIR/devops/deploy/i18n-service/Dockerfile $TRAVIS_BUILD_DIR/publish/
         - cd $TRAVIS_BUILD_DIR/publish && ls
-        - mv singleton-[0~9]*.jar i18n-service.jar && ls
+        - mv singleton-[0~9\.]*.jar i18n-service.jar && ls
         - docker build -t singleton .
         - docker run -d -p 8090:8090 --name singleton singleton
         - docker ps
